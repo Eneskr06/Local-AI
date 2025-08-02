@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Soru-Cevap Sistemi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI Soru-Cevap Sistemi</h1>
+        
+        <div class="controls">
+            <button onclick="clearHistory()" id="clear-btn" class="control-btn">
+                🗑️ Geçmişi Temizle
+            </button>
+            <div class="conversation-info">
+                <span id="conversation-count">Henüz mesaj yok</span>
+            </div>
+        </div>
+        
+        <div id="chat-container" class="chat-container">
+            <div class="message ai-message">
+                <div class="message-content">
+                    <strong>AI:</strong> Merhaba! Ben Luna, senin AI asistanın. Size nasıl yardımcı olabilirim? 😊
+                </div>
+                <div class="message-time"></div>
+            </div>
+        </div>
+        
+        <div class="input-section">
+            <div class="input-group">
+                <input type="text" id="question-input" placeholder="Sorunuzu buraya yazın..." onkeypress="handleKeyPress(event)" maxlength="500">
+                <button onclick="askQuestion()" id="ask-btn">
+                    <span>Gönder</span>
+                </button>
+            </div>
+            <div class="char-counter">
+                <span id="char-count">0</span>/500
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Groq API ile çalışır • <a href="/health" target="_blank">Sistem Durumu</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
